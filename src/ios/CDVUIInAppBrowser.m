@@ -153,7 +153,7 @@ static CDVUIInAppBrowser* instance = nil;
 
     if (self.inAppBrowserViewController == nil) {
         NSString* userAgent = [CDVUserAgentUtil originalUserAgent];
-        NSString* overrideUserAgent = @"Mozilla/5.0 Google";
+        NSString* overrideUserAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/81.0.4044.124 Mobile/15E148 Safari/604.1";
         NSString* appendUserAgent = [self settingForKey:@"AppendUserAgent"];
         if(overrideUserAgent){
             userAgent = overrideUserAgent;
@@ -462,7 +462,7 @@ static CDVUIInAppBrowser* instance = nil;
     BOOL useBeforeLoad = NO;
     NSString* httpMethod = request.HTTPMethod;
     NSString* errorMessage = nil;
-    
+
     if([_beforeload isEqualToString:@"post"]){
         //TODO handle POST requests by preserving POST data then remove this condition
         errorMessage = @"beforeload doesn't yet support POST requests";
@@ -524,11 +524,11 @@ static CDVUIInAppBrowser* instance = nil;
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                       messageAsDictionary:@{@"type":@"beforeload", @"url":[url absoluteString]}];
         [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
-        
+
         [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
         return NO;
     }
-    
+
     if(errorMessage != nil){
         NSLog(errorMessage);
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
