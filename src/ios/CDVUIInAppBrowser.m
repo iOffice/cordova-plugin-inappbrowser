@@ -153,7 +153,7 @@ static CDVUIInAppBrowser* instance = nil;
 
     if (self.inAppBrowserViewController == nil) {
         NSString* userAgent = [CDVUserAgentUtil originalUserAgent];
-        NSString* overrideUserAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/81.0.4044.124 Mobile/15E148 Safari/604.1";
+        NSString* overrideUserAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1";
         NSString* appendUserAgent = [self settingForKey:@"AppendUserAgent"];
         if(overrideUserAgent){
             userAgent = overrideUserAgent;
