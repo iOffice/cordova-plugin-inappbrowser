@@ -998,7 +998,7 @@ public class InAppBrowser extends CordovaPlugin {
                     inAppWebView.addJavascriptInterface(new JsObject(), "cordova_iab");
                 }
 
-                String overrideUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/81.0.4044.124 Mobile/15E148 Safari/604.1";
+                String overrideUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1";
                 String appendUserAgent = preferences.getString("AppendUserAgent", null);
 
                 if (overrideUserAgent != null) {
